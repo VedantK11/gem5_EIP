@@ -37,6 +37,7 @@ a state state of long running applcations.
 ### Steps to create a checkpoint:
 1. Launch QEMU emulation using the `run_ubuntu_linux.sh` file
    ```
+   bash run_docker.sh
    bash run_ubuntu.sh
    ```
 2. After reaching a steady state invoke the following command to create a checkpoint.
@@ -61,6 +62,15 @@ a state state of long running applcations.
    scons -j8 build/ARM/gem5.opt
    exit
    ```
+   If you encounter the following error while building gem5:
+   ```
+   No such file or directory: "/qpoints/gem5/fatal: detected dubious ownership in repository at '/qpoints/gem5'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /qpoints/gem5/hooks"
+   ```
+   You can fix this by following the information reported above:
+   ```
+   git config --global --add safe.directory /qpoints/gem5
+   ```
+
  
  2. Run checkpoint in the docker environment.
     ```

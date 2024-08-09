@@ -13,6 +13,9 @@ echo done
 
 echo Pull gem5 docker image
 docker pull gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1
+# If you can't pull, you can use the following instead
+# docker pull \
+#     gcr.io/gem5-test/ubuntu-20.04_all-dependencies@sha256:198bcb503c823cf68a0d2eb65da5ccfa34a4fc523e13777664a301115f83937e
 bash gem5_docker_build.sh
 cd ..
 
