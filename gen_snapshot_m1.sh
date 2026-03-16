@@ -1,1 +1,0 @@
-scripts/test/gen_snapshot_m1.sh
